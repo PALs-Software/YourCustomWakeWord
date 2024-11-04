@@ -1,0 +1,71 @@
+{
+    "-----------------WAKEWORD_SETTINGS-----------------": "",
+    "wake_words": [
+        "Hey Quinn",
+        "Hey Quinn?"
+    ],
+    "negative_words": [
+        "Äquivalenz",
+        "Quittungen",
+        "Quitt",
+        "Quelle",
+        "Qualle",
+        "Nass",
+        "Net",
+        "Hey",
+        "Quinn"
+    ],
+
+    "-----------------TRAINING_DATA_GENERATOR_SETTINGS-----------------": "",
+    "common_voice_dataset_languages": ["en"],
+    "piper_language_code": "de_DE",
+    "piper_models_to_ignore": [
+        "de_DE-pavoque-low",
+        "de_DE-kerstin-low",
+        "de_DE-eva_k-x_low",
+        "de_DE-karlsson-low"
+    ],
+    "piper_models_to_wake_word_with_question": [
+        "de_DE-ramona-low"
+    ],
+    "piper_generator_model": "en_US-libritts_r-medium.pt",
+    "piper_generator_sample_size": 1000,
+    "piper_generator_sample_size_per_negative_word": 200,
+    "piper_length_scales": [ 0.75, 1.0, 1.25, 1.4 ],
+    "piper_noise_scales": [ 0.667, 0.75, 0.85, 0.9, 1.0, 1.4 ],
+    "piper_noise_scale_ws": [ 0.8, 0.98 ],
+
+    "azure_key": "MY_SPEECH_KEY",
+    "azure_region": "MY_SPEECH_REGION",
+    "azure_tts_languages": [ "en-US", "de-DE", "nl-NL", "es-ES", "fr-FR", "it-IT" ],
+    "azure_tts_languages_negative_words": [ "de-DE", "en-US", "nl-NL" ],
+
+    "-----------------SPECTROGRAM_TRAINING_DATA_SETTINGS-----------------": "",
+    "window_size_in_ms": 2000,
+    "voice_noise_floor": 0.1,
+    "add_background_audio_possibility": 0.7,
+    "add_background_audio_impulses_possibility": 0.3,
+    "max_audio_background_volume": 0.6,
+    "spectrogram_window_size": 320,
+    "spectrogram_stride": 160,
+    "pre_pooling_spectrogram_features_values_to_test": [ 3, 6 ],
+
+    "-----------------TRAINING_DATA_CONSISTENCY_SETTINGS-----------------": "",
+    "no_of_training_samples_to_generate": 100000,
+    "percentage_of_positive_data": 0.5,
+    "negative_data_percentage_of_negative_words": 0.3,
+    "negative_data_percentage_of_negative_audio": 0.5,
+    "negative_data_percentage_of_background_audio": 0.2,
+
+    "-----------------TEST MODEL TYPES TRAINING-----------------": "",
+    "k_folds": 10,
+    "max_train_elements_gpu_can_handle_by_pre_pool": { "3": 60000 },
+    "use_validation_split_only_by_max_elements_set": true,
+    "validation_data_split": 0.1,
+    "test_data_size": 10000,
+
+    "-----------------MODEL TRAINING-----------------": "",
+    "training_batch_size": 250,
+    "training_epochs": 30,
+    "validation_steps": 5
+}

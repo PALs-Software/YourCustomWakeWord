@@ -1,0 +1,1 @@
+xxd -i workspace/model_training_dir/final_model/final.tflite > workspace/model_training_dir/final_model/final.cpp

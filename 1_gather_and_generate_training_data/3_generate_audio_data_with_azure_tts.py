@@ -63,7 +63,7 @@ def generate_data(output_dir, words, languages):
                     synthesize(word, language, voice.short_name, file_path, style, style_degree, pitch, rate)
 
 def synthesize(text, language, voice, output_file_path, style, style_degree, pitch, rate):
-    speech_config = speechsdk.SpeechConfig(subscription=SPEECH_KEY, region=SPEECH_REGION)
+    speech_config = speechsdk.SpeechConfig(subscription=settings.azure_key, region=settings.azure_region)
     speech_config.speech_synthesis_language = language 
     speech_config.speech_synthesis_voice_name = voice
     audio_config = speechsdk.audio.AudioOutputConfig(filename=output_file_path)

@@ -10,7 +10,6 @@ import keras
 
 model_dir_name = "final_model"
 final_pre_pooling_setting = 6
-enable_optimize_for_size = True
 conversion_type = 'Dynamic range quantization' # Dynamic range quantization is a recommended starting point because it provides reduced memory usage and faster computation without you having to provide a representative dataset for calibration. This type of quantization, statically quantizes only the weights from floating point to integer at conversion time, which provides 8-bits of precision
 conversion_type = 'Full integer quantization' # You can get further latency improvements, reductions in peak memory usage, and compatibility with integer only hardware devices or accelerators by making sure all model math is integer quantized.
 
@@ -20,8 +19,6 @@ model =  keras.models.load_model(model_path)
 converter = tf.lite.TFLiteConverter.from_keras_model(model)
 
 converter.optimizations = [tf.lite.Optimize.DEFAULT]   
-if enable_optimize_for_size:
-    converter.optimizations = [tf.lite.Optimize.OPTIMIZE_FOR_SIZE]        
 
 if conversion_type == 'Full integer quantization':
     converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS_INT8]

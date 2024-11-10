@@ -17,7 +17,7 @@
     ],
 
     "-----------------TRAINING_DATA_GENERATOR_SETTINGS-----------------": "",
-    "common_voice_dataset_languages": ["en"],
+    "common_voice_dataset_languages": ["de", "en"],
     "piper_language_code": "de_DE",
     "piper_models_to_ignore": [
         "de_DE-pavoque-low",
